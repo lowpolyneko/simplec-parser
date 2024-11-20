@@ -101,7 +101,7 @@ module parser =
     | CheckIdentifier "str_literal" -> matchIdentifier "str_literal" tokens
     | "true"
     | "false" -> matchToken next_token tokens
-    | _ -> failwith("expecting identifier or literal but found " + next_token)
+    | _ -> failwith("expecting identifier or literal, but found " + next_token)
 
   //
   // expression op
@@ -154,7 +154,7 @@ module parser =
     | "true"
     | "false" -> expr_value tokens
     | "endl" -> matchToken next_token tokens
-    | _ -> failwith("expecting identifier or literal but found " + next_token)
+    | _ -> failwith("expecting identifier or literal, but found " + next_token)
 
   //
   // cout output statement
@@ -194,7 +194,7 @@ module parser =
     | "cout" -> output tokens
     | "if" -> ifstmt tokens
     | CheckIdentifier "identifier" -> assignment tokens
-    | _ -> failwith("expecting statement but found " + next_token)
+    | _ -> failwith("expecting statement, but found " + next_token)
 
   //
   // if statement
