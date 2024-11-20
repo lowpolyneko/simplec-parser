@@ -140,7 +140,7 @@ module parser =
     | ">="
     | "=="
     | "!=" -> expr_op tail |> expr_value
-    | _ -> tokens
+    | _ -> tail
 
   //
   // output value
